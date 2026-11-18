@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Conocé cómo El Goro trata los datos personales que compartís al consultar por sus instalaciones y reservas.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Política de Privacidad | El Goro">
+    <meta property="og:description"
+        content="Conocé cómo El Goro trata los datos personales que compartís al consultar por sus instalaciones y reservas.">
+    <meta property="og:image" content="https://lavadero-cj-neon.vercel.app/img/logo-elgoro.png">
+    <meta property="og:url" content="https://lavadero-cj-neon.vercel.app/privacidad.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Política de Privacidad | El Goro">
+    <meta name="twitter:description"
+        content="Conocé cómo El Goro trata los datos personales que compartís al consultar por sus instalaciones y reservas.">
+    <meta name="twitter:image" content="https://lavadero-cj-neon.vercel.app/img/logo-elgoro.png">
+    <link rel="canonical" href="https://lavadero-cj-neon.vercel.app/privacidad.html">
+    <link rel="shortcut icon" type="Image/png" href="./img/logo-elgoro.png">
+    <link rel="stylesheet" href="./css/privacidad.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Política de Privacidad | El Goro</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </label>
+
+        <div class="logo">
+            <a href="index.html" class="enlace">
+                <img src="./img/logo-elgoro.png" class="logo" alt="Logo El Goro">
+            </a>
+            <div class="names">
+                <span class="main-name">EL GORO</span>
+                <span class="main-namesito">¡Traé las ganas, nosotros ponemos el lugar!</span>
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="link-animado">Inicio</a></li>
+            <li><a href="index.html#section-goro" class="link-animado">El Goro</a></li>
+            <li><a href="index.html#container-servicios" class="link-animado">Servicios</a></li>
+            <li><a href="galeria.html" class="link-animado">Galería</a></li>
+            <li><a href="index.html#contactos" class="link-animado">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            document.querySelector("nav").classList.toggle("abajo", window.scrollY > 0);
+        }, { passive: true });
+    </script>
+
+    <!-- JavaScript para animación de enlaces -->
+    <script>
+        // 1. Creamos el array de letras automáticamente
+        document.querySelectorAll('.link-animado').forEach(link => {
+          link.innerHTML = link.textContent.split('').map(letra => 
+            `<span>${letra}</span>`
+          ).join('');
+        });
+
+        // 2. Animación al hacer hover
+        document.querySelectorAll('.link-animado').forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            anime.timeline({ loop: false })
+              .add({
+                targets: link.querySelectorAll('span'),
+                translateY: -10, // salto hacia arriba
+                duration: 400,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40) // LA OLA: 40ms entre cada letra
+              })
+              .add({
+                targets: link.querySelectorAll('span'),
+                translateY: 0, // vuelta al origen
+                duration: 600,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40),
+                // se queda 1 segundo arriba antes de volver
+              }, '+=800'); // +=800 = espera 0.8s
+          });
+        });
+    </script>
+
+
+    <main class="zona1 container-politicas">
+        <div class="h1-cabecera">
+            <h1>Política de Privacidad</h1>
+        </div>
+
+        <div class="container-uso">
+            <div class="cabecera">
+                <h2>1. Responsable y contacto</h2>
+                <p>El sitio presenta el espacio recreativo El Goro, ubicado en Bandera Argentina 200, a dos cuadras
+                    de la Ruta 193 (km 10.5), en Escalada, partido de Zárate, Provincia de Buenos Aires. Esta es la
+                    dirección del espacio y no se presenta como domicilio legal de una persona jurídica. Para consultas
+                    sobre tus datos personales, podés comunicarte por WhatsApp, Instagram o Messenger desde la
+                    <a href="index.html#contactos">sección Contactos</a>, o llamar al
+                    <a href="tel:+543487360514">+54-3487-360514</a>. El Goro no utiliza correo electrónico de contacto.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>2. Datos que se solicitan y finalidad</h2>
+                <p>Este sitio no tiene un formulario de contacto. Si decidís escribir por WhatsApp, Instagram o
+                    Messenger, El Goro podrá recibir los datos que compartas voluntariamente, como tu nombre o perfil,
+                    teléfono, mensaje, fecha consultada y cantidad de asistentes. Se usan para responder consultas
+                    sobre el espacio y coordinar reservas. No envíes información sensible que no sea necesaria.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>3. Mensajes por plataformas externas</h2>
+                <p>Los enlaces de contacto permiten iniciar conversaciones por WhatsApp, Instagram o Facebook
+                    Messenger. Si usás esos servicios, la plataforma correspondiente procesa los datos de acuerdo
+                    con sus propias condiciones y políticas de privacidad. El sitio solo proporciona enlaces a esos
+                    servicios; las conversaciones se realizan en las plataformas y no mediante un formulario web.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>4. Servicios externos y navegación</h2>
+                <p>El sitio incluye un mapa de Google Maps y carga recursos técnicos de proveedores externos. Esos
+                    proveedores pueden recibir datos técnicos, como la dirección IP y datos del navegador, conforme a
+                    sus propias políticas. Podés consultar la
+                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+                        Política de Privacidad de Google</a>.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>5. Conservación y seguridad</h2>
+                <p>Los mensajes se reciben en las plataformas de contacto elegidas y su conservación también depende
+                    de las funciones y configuraciones de cada servicio. El Goro utiliza la información compartida
+                    para responder consultas, gestionar reservas y cumplir obligaciones aplicables. Para solicitar
+                    la eliminación de la información recibida por los canales de El Goro, podés comunicarte por
+                    esos mismos canales.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>6. Derechos sobre tus datos</h2>
+                <p>Podés solicitar acceso a tus datos, así como su rectificación, actualización o supresión, cuando
+                    corresponda, escribiendo por WhatsApp, Instagram o Messenger desde la
+                    <a href="index.html#contactos">sección Contactos</a> o llamando al
+                    <a href="tel:+543487360514">+54-3487-360514</a>. Según la Ley 25.326, el derecho de
+                    acceso puede ejercerse gratuitamente con la periodicidad establecida por la ley; el responsable
+                    debe responder el pedido de acceso dentro de diez días corridos y los pedidos de rectificación,
+                    actualización o supresión dentro de cinco días hábiles.
+                    Si considerás que tus derechos no fueron atendidos, podés presentar un reclamo ante la
+                    <a href="https://www.argentina.gob.ar/aaip/datospersonales" target="_blank"
+                        rel="noopener noreferrer">Agencia de Acceso a la Información Pública (AAIP)</a>, autoridad
+                    de aplicación de la Ley 25.326.
+                </p>
+            </div>
+
+            <div class="cabecera">
+                <h2>7. Cambios a esta política</h2>
+                <p>Esta política puede actualizarse si cambian el sitio, los canales de contacto, los proveedores
+                    utilizados o la forma de tratar los datos. La versión vigente será la publicada en esta página.
+                    Para consultas, podés comunicarte por los canales indicados o llamar al
+                    <a href="tel:+543487360514">+54-3487-360514</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        <div class="container-box">
+
+            <div class="box-footer">
+                <h3 class="title-box">Horarios</h3>
+                <p class="dias">Todos los días:</p>
+                <p class="horas">10:00 hs a 20:00 hs</p>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Sociales</h3>
+                <div class="sociales">
+                    <!-- <a href="https://www.linkedin.com/in/jose-luis-espinola-a036b7125/" target="_blank" title="Ir a TikTok">
+                        <img class="tiktok" src="./img/sociales/Linkedin.png" alt="Linkedin"> Linkedin
+                    </a> -->
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Ir a Instagram">
+                        <img class="instagram" src="./img/sociales/instagram.png" alt="Instagram"> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/marisol.goro.elgoro?locale=es_LA" target="_blank" rel="noopener noreferrer" title="Ir a Facebook">
+                        <img class="facebook" src="./img/sociales/facebook.png" alt="Facebook"> Facebook
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+543487360514" target="_blank" rel="noopener noreferrer" title="Ir a Whatsapp">
+                        <img class="whatsapp" src="./img/sociales/whatsapp.png" alt="Whatsapp">Whatsapp
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Otros datos</h3>
+                <div class="otros-datos">
+                    <p>Consultas: <a href="index.html#contactos">WhatsApp, Instagram o Messenger</a></p>
+                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-3487-360514</p>
+                    <p class="direccion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bandera Argentina 200, Ruta 193 km 10.5, Escalada, Zárate, Buenos Aires</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="legales">
+            <a class="creditos" href="creditos.html">Créditos</a>
+            <a class="terminos" href="terminos.html">Térm. y condiciones</a>
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+
+        <!-- ******** linea ******** -->
+        <hr>
+
+        <!-- ******** Copyright ******** -->
+        <div class="copy">
+            <!-- <p class="copyright">&copy; <span id="copyright-year"></span> Administración Bourguet - Todos los derechos reservados - Espinola José Luis</p> -->
+            <p class="copyright">&copy; <span id="copyright-year"></span>
+                El Goro - Todos los derechos reservados
+            </p>
+
+            <script>
+                const currentYear = new Date().getFullYear();
+                document.getElementById('copyright-year').textContent = currentYear;
+            </script>
+        </div>
+    </footer>
+
+    <script src="./js/menu.js"></script>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymcus"></script>
+    <!-- Incluir la biblioteca de ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/scrollreveal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Consultá los términos y condiciones del sitio web y del alquiler del espacio recreativo El Goro, en Escalada, Zárate.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Términos y condiciones | El Goro">
+    <meta property="og:description"
+        content="Consultá los términos y condiciones del sitio web y del alquiler del espacio recreativo El Goro, en Escalada, Zárate.">
+    <meta property="og:image" content="https://lavadero-cj-neon.vercel.app/img/logo-elgoro.png">
+    <meta property="og:url" content="https://lavadero-cj-neon.vercel.app/terminos.html">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Términos y condiciones | El Goro">
+    <meta name="twitter:description"
+        content="Consultá los términos y condiciones del sitio web y del alquiler del espacio recreativo El Goro, en Escalada, Zárate.">
+    <meta name="twitter:image" content="https://lavadero-cj-neon.vercel.app/img/logo-elgoro.png">
+
+    <link rel="canonical" href="https://lavadero-cj-neon.vercel.app/terminos.html">
+
+    <link rel="shortcut icon" type="Image/png" href="./img/logo-elgoro.png">
+    <link rel="stylesheet" href="./css/terminos.css">
+    <title>Términos y condiciones | El Goro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Schema Markup for LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "El Goro",
+      "image": "https://lavadero-cj-neon.vercel.app/img/logo-elgoro.png",
+      "description": "Espacio recreativo con quincho, pileta, parrilla y cancha en Escalada, Zárate.",
+      "url": "https://lavadero-cj-neon.vercel.app/",
+      "telephone": "+543487360514",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bandera Argentina 200, Ruta 193 km 10.5",
+        "addressLocality": "Escalada, Zárate",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "areaServed": ["Escalada", "Zárate", "Campana", "Zona Norte"]
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegacion o NavBar -->
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </label>
+
+        <div class="logo">
+            <a href="index.html" class="enlace">
+                <img src="./img/logo-elgoro.png" class="logo" alt="Logo El Goro">
+            </a>
+            <div class="names">
+                <span class="main-name">EL GORO</span>
+                <span class="main-namesito">¡Traé las ganas, nosotros ponemos el lugar!</span>
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="link-animado">Inicio</a></li>
+            <li><a href="index.html#section-goro" class="link-animado">El Goro</a></li>
+            <li><a href="index.html#container-servicios" class="link-animado">Servicios</a></li>
+            <li><a href="galeria.html" class="link-animado">Galería</a></li>
+            <li><a href="index.html#contactos" class="link-animado">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- JavaScript donde se captura la parte de arriba de la pagina: header-->
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("nav");
+            header.classList.toggle("abajo", window.scrollY > 0);
+        }, { passive: true });
+    </script>
+
+    <!-- JavaScript para animación de enlaces -->
+    <script>
+        // 1. Creamos el array de letras automáticamente
+        document.querySelectorAll('.link-animado').forEach(link => {
+        link.innerHTML = link.textContent.split('').map(letra => 
+            `<span>${letra}</span>`
+        ).join('');
+        });
+
+        // 2. Animación al hacer hover
+        document.querySelectorAll('.link-animado').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            anime.timeline({ loop: false })
+            .add({
+                targets: link.querySelectorAll('span'),
+                translateY: -10, // salto hacia arriba
+                duration: 400,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40) // LA OLA: 40ms entre cada letra
+            })
+            .add({
+                targets: link.querySelectorAll('span'),
+                translateY: 0, // vuelta al origen
+                duration: 600,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40),
+                // se queda 1 segundo arriba antes de volver
+            }, '+=800'); // +=800 = espera 0.8s
+        });
+        });
+    </script>
+
+
+    <!-- Zona central de la primer pagina -->
+    <section class="zona1 container-politicas">
+        <div class="h1-cabecera">
+            <h1>Términos y Condiciones</h1>
+        </div>
+
+        <div class="container-uso">
+            <div class="cabecera introduccion">
+                <h2>1. Introducción</h2>
+            </div>
+            <div class="parrafo p-introduccion">
+                <p>Estos términos regulan el uso del sitio web de El Goro y las consultas sobre el alquiler de su
+                    espacio recreativo en Escalada, Zárate. La reserva se rige por las condiciones que se informen
+                    y acuerden para la fecha solicitada. Nada de lo indicado aquí limita los derechos que la normativa
+                    vigente reconoce a las personas consumidoras.
+                </p>
+            </div>
+
+            <div class="cabecera uso">
+                <h2>2. Uso del sitio Web</h2>
+                <p>El contenido publicado en este sitio tiene fines informativos y de consulta personal.
+                    No está permitido copiar, distribuir o modificar la información con fines comerciales sin
+                    autorización de El Goro. Las imágenes, instalaciones, servicios, precios y horarios publicados
+                    son orientativos y están sujetos a disponibilidad y confirmación para la fecha consultada.
+                    La información del sitio puede actualizarse; los cambios no modifican una reserva ya confirmada.
+                </p>
+            </div>
+
+            <div class="cabecera propiedad">
+                <h2>3. Espacio y servicios</h2>
+                <p>El Goro ofrece un espacio recreativo con quincho, pileta, parrilla, cancha, baños, mesas y sillas.
+                    El alquiler es para pasar el día y no incluye estadía nocturna. La capacidad máxima es de 40 personas.
+                    El espacio está ubicado en Bandera Argentina 200, a dos cuadras de la Ruta 193 (km 10.5),
+                    en Escalada, partido de Zárate, Provincia de Buenos Aires. La disponibilidad debe confirmarse
+                    para la fecha solicitada.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>4. Consultas, reservas y precios</h2>
+                <p>Para consultar, la persona interesada debe proporcionar información correcta sobre la fecha,
+                    cantidad de asistentes y necesidades del evento. La fecha se reserva con el pago de un depósito,
+                    separado del monto del alquiler. El alquiler puede abonarse hasta el día anterior a la reserva.
+                    El depósito se devuelve al retirarse, una vez comprobado que las instalaciones quedan en las mismas
+                    condiciones. En caso de lluvia, se coordina una nueva fecha que puedan utilizar o se devuelve
+                    el depósito. Los importes se informan al consultar y antes de confirmar la reserva.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>5. Uso de las instalaciones</h2>
+                <p>El horario habitual es de 10:00 a 20:00 y no se modifica; se puede acordar una extensión hasta
+                    las 00:00 abonando las horas extra. Se admiten animales. No está permitido usar pomos de espuma
+                    ni realizar juegos de agua. Las instalaciones deben utilizarse respetando la capacidad máxima,
+                    las indicaciones de seguridad y la normativa aplicable. Ninguna disposición de estos términos
+                    excluye responsabilidades ni derechos de las personas consumidoras cuando la ley no lo permita.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>6. Datos personales</h2>
+                <p>El tratamiento de los datos personales se describe en nuestra
+                    <a href="privacidad.html">Política de Privacidad</a>. Para consultas sobre tus datos, podés
+                    comunicarte por WhatsApp, Instagram o Messenger desde la
+                    <a href="index.html#contactos">sección Contactos</a>, o llamar al
+                    <a href="tel:+543487360514">+54-3487-360514</a>.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>7. Modificaciones</h2>
+                <p>El Goro puede actualizar estos términos para reflejar cambios en el sitio o en sus servicios.
+                    La versión vigente será la publicada en esta página. Las modificaciones no tendrán efecto
+                    retroactivo sobre reservas ya confirmadas ni podrán afectar derechos reconocidos por la normativa.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>8. Ley aplicable y resolución de conflictos</h2>
+                <p>Estos términos se interpretan conforme a la normativa vigente en la República Argentina, incluidas
+                    las normas de protección al consumidor cuando resulten aplicables. Cualquier consulta o reclamo podrá
+                    presentarse ante las autoridades y los tribunales que correspondan según dicha normativa. Nada de
+                    esta cláusula implica renunciar a derechos o fueros que la ley reconozca al consumidor.
+                </p>
+            </div>
+
+            <div class="cabecera contacto">
+                <h2>9. Contacto</h2>
+                <p>Si tenés dudas sobre estos términos o querés consultar una fecha, podés comunicarte con El Goro
+                    por WhatsApp, Instagram o Messenger desde la
+                    <a href="index.html#contactos">sección Contactos</a>, o por teléfono al
+                    <a href="tel:+543487360514">+54-3487-360514</a>. La dirección del espacio es
+                    Bandera Argentina 200, a dos cuadras de la Ruta 193 (km 10.5), Escalada, Zárate,
+                    Provincia de Buenos Aires.
+                </p>
+            </div>
+        </div>
+
+        <a href="#" class="flecha-arriba">
+            <img src="./img/flecha1.png" alt="Flecha Arriba" title="Inicio">
+        </a>
+
+    </section>
+
+
+    <!-- ********* Seccion de footer ******** -->
+    <footer class="footer-container">
+        <div class="container-box">
+
+            <div class="box-footer">
+                <h3 class="title-box">Horarios</h3>
+                <p class="dias">Todos los días:</p>
+                <p class="horas">10:00 hs a 20:00 hs</p>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Sociales</h3>
+                <div class="sociales">
+                    <!-- <a href="https://www.linkedin.com/in/jose-luis-espinola-a036b7125/" target="_blank" title="Ir a TikTok">
+                        <img class="tiktok" src="./img/sociales/Linkedin.png" alt="Linkedin"> Linkedin
+                    </a> -->
+                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Ir a Instagram">
+                        <img class="instagram" src="./img/sociales/instagram.png" alt="Instagram"> Instagram
+                    </a>
+                    <a href="https://www.facebook.com/marisol.goro.elgoro?locale=es_LA" target="_blank" rel="noopener noreferrer" title="Ir a Facebook">
+                        <img class="facebook" src="./img/sociales/facebook.png" alt="Facebook"> Facebook
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+543487360514" target="_blank" rel="noopener noreferrer" title="Ir a Whatsapp">
+                        <img class="whatsapp" src="./img/sociales/whatsapp.png" alt="Whatsapp">Whatsapp
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Otros datos</h3>
+                <div class="otros-datos">
+                    <p>Consultas: <a href="index.html#contactos">WhatsApp, Instagram o Messenger</a></p>
+                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-3487-360514</p>
+                    <p class="direccion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bandera Argentina 200, Ruta 193 km 10.5, Escalada, Zárate, Buenos Aires</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="legales">
+            <a class="creditos" href="creditos.html">Créditos</a>
+            <a class="terminos" href="terminos.html">Térm. y condiciones</a>
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+
+        <!-- ******** linea ******** -->
+        <hr>
+
+        <!-- ******** Copyright ******** -->
+        <div class="copy">
+            <!-- <p class="copyright">&copy; <span id="copyright-year"></span> Administración Bourguet - Todos los derechos reservados - Espinola José Luis</p> -->
+            <p class="copyright">&copy; <span id="copyright-year"></span>
+                El Goro - Todos los derechos reservados
+            </p>
+
+            <script>
+                const currentYear = new Date().getFullYear();
+                document.getElementById('copyright-year').textContent = currentYear;
+            </script>
+        </div>
+    </footer>
+
+    <script src="/js/menu.js"></script>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymous">
+    </script>
+    <script src="/js/scrollreveal.js"></script>
+</body>
+
+</html>

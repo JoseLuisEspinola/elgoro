@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+      content="Instalación, reparación y mantenimiento de aires acondicionados y calderas. Base en José C. Paz con cobertura en Pilar, Escobar, San Miguel y Zona Norte. Técnicos certificados y 6 meses de garantía.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Aires Nico | Climatización en José C. Paz y Zona Norte">
+    <meta property="og:description"
+      content="Instalación, reparación y mantenimiento de aires acondicionados y calderas. Base en José C. Paz con cobertura en Pilar, Escobar, San Miguel y Zona Norte.">
+    <meta property="og:image" content="https://airesnico.com/img/aires-nico-logo.jpg">
+    <meta property="og:url" content="https://airesnico.com/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aires Nico | Climatización en José C. Paz y Zona Norte">
+    <meta name="twitter:description"
+      content="Instalación, reparación y mantenimiento de aires acondicionados y calderas. Base en José C. Paz con cobertura en Pilar, Escobar, San Miguel y Zona Norte.">
+    <meta name="twitter:image" content="https://airesnico.com/img/aires-nico-logo.jpg">
+
+    <link rel="canonical" href="https://airesnico.com/">
+
+    <link rel="shortcut icon" type="Image/png" href="./img/aires-nico-logo.jpg">
+    <link rel="stylesheet" href="./css/galeria.css">
+    <title>Aires Nico | Climatización en José C. Paz y Zona Norte</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Schema Markup for LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HVACBusiness",
+        "name": "Aires Nico",
+        "image": "https://airesnico.com/img/aires-nico-logo.jpg",
+        "description": "Trabajos seguros, con garantía. Base en José C. Paz. Nos especializamos en Reparación, Mantenimiento de aires y Calderas en Zona Norte.",
+        "url": "https://airesnico.com/",
+        "telephone": "+541176039395",
+        "email": "ng9104944@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "José C. Paz",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        "areaServed": ["José C. Paz", "Pilar", "Villa Rosa", "Escobar", "San Miguel", "Malvinas Argentinas", "Zona Norte", "CABA"],
+        "sameAs": [
+          "https://www.instagram.com/airesacondicionadosnico"
+        ]
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegacion o NavBar -->
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </label>
+        
+        <div class="logo">
+            <a href="index.html" class="enlace">
+                <img src="./img/logo-nico.png" class="logo" alt="Logo Aires Nico">
+            </a>
+            <div class="names">
+                <span class="main-name">Aires Nico</span>
+                <span class="main-namesito">¡Servicio garantizado!</span>
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="index.html" class="link-animado">Inicio</a></li>
+            <li><a href="servicios.html" class="link-animado">Servicios</a></li>
+            <li><a href="#" class="link-animado">Galería</a></li>
+            <li><a href="cobertura.html" class="link-animado">Cobertura</a></li>
+            <li><a href="index.html#section-nosotros" class="link-animado">Nosotros</a></li>
+            <li><a href="index.html#ubicacion" class="link-animado">Contacto</a></li>
+        </ul>
+
+        <!-- Botones de redes centrados -->
+        <div class="nav-redes">
+            <a href="https://api.whatsapp.com/send?phone=+541176039395&text=Hola%2C%20me%20contacto%20desde%20el%20sitio%20web%20Aires%20Nico...%20¿podrías%20contarme%20sobre%20los%20servicios?"
+                target="_blank" title="Enviar Whatsapp">
+                <img src="./img/sociales/whatsapp-dorado.png" alt="Logo Whatsapp">
+            </a>
+            <a href="https://www.instagram.com/airesacondicionadosnico?stkn=M2E3b3gycTF2ZGty" target="_blank"
+                title="Ir a Instagram">
+                <img src="./img/sociales/instagram-dorado.png" alt="Logo Instagram">
+            </a>
+        </div>
+    </nav>
+
+    <!-- JavaScript donde se captura la parte de arriba de la pagina: header-->
+    <script>
+        window.addEventListener("scroll", function () {
+            var header = document.querySelector("nav");
+            header.classList.toggle("abajo", window.scrollY > 0);
+        }, { passive: true }); // pasive lo agregue, solo si NO uso preventDefault()
+    </script>
+
+    <!-- JavaScript para animación de enlaces -->
+    <script>
+        // 1. Creamos el array de letras automáticamente
+        document.querySelectorAll('.link-animado').forEach(link => {
+            link.innerHTML = link.textContent.split('').map(letra => 
+            `<span>${letra}</span>`
+            ).join('');
+        });
+
+        // 2. Animación al hacer hover
+        document.querySelectorAll('.link-animado').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+            anime.timeline({ loop: false })
+                .add({
+                targets: link.querySelectorAll('span'),
+                translateY: -10, // salto hacia arriba
+                duration: 400,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40) // LA OLA: 40ms entre cada letra
+                })
+                .add({
+                targets: link.querySelectorAll('span'),
+                translateY: 0, // vuelta al origen
+                duration: 600,
+                easing: 'easeOutElastic(1, .6)',
+                delay: anime.stagger(40),
+                // se queda 1 segundo arriba antes de volver
+                }, '+=800'); // +=800 = espera 0.8s
+            });
+        });
+    </script>
+
+    <!-- Zona central de la primer pagina -->
+    <section class="zona1">
+        <div class="container-zona1">
+            <!-- <img id="imagenFondo" class="imagen-fondo" src="" alt="Fondo carrusel"> -->
+
+            <div class="contenido">
+                <div class="h1-zona1">
+                    <h1 class="title-main">Galería de Trabajos</h1>
+                </div>
+                <div class="p-zona1">
+                    <h2 class="parrafo-galeria">
+                        En <span>Aires Nico</span> cada imagen refleja nuestro trabajo con dedicación y compromiso.
+                        La galería muestra instalaciones seguras, reparaciones puntuales y mantenimientos realizados con
+                        cuidado, transmitiendo confianza y garantía en cada servicio.
+                        Queremos que veas cómo transformamos espacios y brindamos confort a hogares, empresas y
+                        comercios.
+                    </h2>
+                </div>
+
+                <div class="zona1-btn">
+                    <a href="index.html#ubicacion" class="btn-zona1">¡Pedir presupuesto gratis!</a>
+                </div>
+
+                <div class="flecha-abajo">
+                    <a href="#container-gallery" title="Galeria">
+                        <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Galerias -->
+    <section id="container-gallery">
+        <h2 class="title-gallery">Galería</h2>
+        <div class="container-img">
+            <img src="/img/galeria/image01.jpeg" alt="imagen1">
+            <img src="/img/galeria/image02.jpeg" alt="imagen2">
+            <img src="/img/galeria/image03.jpeg" alt="imagen3">
+            <img src="/img/galeria/image04.jpeg" alt="imagen4">
+            <img src="/img/galeria/image05.jpeg" alt="imagen5">
+            <img src="/img/galeria/image06.jpeg" alt="imagen6">
+            <img src="/img/galeria/image07.jpeg" alt="imagen7">
+            <img src="/img/galeria/image08.jpeg" alt="imagen8">
+            <img src="/img/galeria/image09.jpeg" alt="imagen9">
+            <img src="/img/galeria/image10.jpeg" alt="imagen10">
+            <img src="/img/galeria/image11.jpeg" alt="imagen11">
+            <img src="/img/galeria/image12.jpeg" alt="imagen12">
+            <img src="/img/galeria/image13.jpeg" alt="imagen13">
+            <img src="/img/galeria/image14.jpeg" alt="imagen14">
+            <img src="/img/galeria/image15.jpeg" alt="imagen15">
+            <img src="/img/galeria/image16.jpeg" alt="imagen16">
+            <img src="/img/galeria/image17.jpeg" alt="imagen17">
+            <img src="/img/galeria/image18.jpeg" alt="imagen18">
+            <img src="/img/galeria/image19.jpeg" alt="imagen19">
+            <img src="/img/galeria/image20.jpeg" alt="imagen20">
+            <img src="/img/galeria/image21.jpeg" alt="imagen21">
+            <img src="/img/galeria/image22.jpeg" alt="imagen22">
+            <img src="/img/galeria/image23.jpeg" alt="imagen23">
+            <img src="/img/galeria/image24.jpeg" alt="imagen24">
+            <img src="/img/galeria/image25.jpeg" alt="imagen25">
+            <img src="/img/galeria/image26.jpeg" alt="imagen26">
+            <img src="/img/galeria/image27.jpeg" alt="imagen27">
+            <img src="/img/galeria/image28.jpeg" alt="imagen28">
+            <img src="/img/galeria/image29.jpeg" alt="imagen29">
+            <img src="/img/galeria/image30.jpeg" alt="imagen30">
+            <img src="/img/galeria/image31.jpeg" alt="imagen31">
+            <img src="/img/galeria/image32.jpeg" alt="imagen32">
+            <img src="/img/galeria/image33.jpeg" alt="imagen33">
+            <img src="/img/galeria/image34.jpeg" alt="imagen34">
+            <img src="/img/galeria/image35.jpeg" alt="imagen35">
+            <img src="/img/galeria/image36.jpeg" alt="imagen36">
+            <img src="/img/galeria/image37.jpeg" alt="imagen37">
+            <img src="/img/galeria/image38.jpeg" alt="imagen38">
+            <img src="/img/galeria/image39.jpeg" alt="imagen39">
+            <img src="/img/galeria/image40.jpeg" alt="imagen40">
+            <img src="/img/galeria/image41.jpeg" alt="imagen41">
+            <img src="/img/galeria/image42.jpeg" alt="imagen42">
+            <img src="/img/galeria/image43.jpeg" alt="imagen43">
+            <img src="/img/galeria/image44.jpeg" alt="imagen44">
+            <img src="/img/galeria/image45.jpeg" alt="imagen45">
+            <img src="/img/galeria/image46.jpeg" alt="imagen46">
+            <img src="/img/galeria/image47.jpeg" alt="imagen47">
+            <img src="/img/galeria/image48.jpeg" alt="imagen48">
+            <img src="/img/galeria/image49.jpeg" alt="imagen49">
+            <img src="/img/galeria/image50.jpeg" alt="imagen50">
+            <img src="/img/galeria/image51.jpeg" alt="imagen51">
+            <img src="/img/galeria/image52.jpeg" alt="imagen52">
+            <img src="/img/galeria/image53.jpeg" alt="imagen53">
+            <img src="/img/galeria/image54.jpeg" alt="imagen54">
+            <img src="/img/galeria/image55.jpeg" alt="imagen55">
+            <img src="/img/galeria/image56.jpeg" alt="imagen56">
+            <img src="/img/galeria/image57.jpeg" alt="imagen57">
+            <img src="/img/galeria/image58.jpeg" alt="imagen58">
+            <img src="/img/galeria/image59.jpeg" alt="imagen59">
+            <img src="/img/galeria/image60.jpeg" alt="imagen60">
+            <img src="/img/galeria/image61.jpeg" alt="imagen61">
+        </div>
+
+        <a class="btn-contactanos" href="index.html#ubicacion">¡Contactanos!</a>
+
+        <a href="#" class="flecha-arriba">
+            <img src="./img/flecha1.png" alt="Flecha Arriba" title="Inicio">
+        </a>
+    </section>
+
+
+
+    <!-- ********* Seccion de footer ******** -->
+    <footer class="footer-container">
+        <div class="container-box">
+
+            <div class="box-footer">
+                <h3 class="title-box">Horarios</h3>
+                <p class="dias">Lunes a viernes:</p>
+                <p class="horas">08:00 hs a 18:00 hs</p>
+                <br>
+                <p class="dias">Sábados:</p>
+                <p class="horas">08:00 hs a 14:00 hs</p>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Sociales</h3>
+                <div class="sociales">
+                    <!-- <a href="https://www.linkedin.com/in/jose-luis-espinola-a036b7125/" target="_blank" title="Ir a TikTok">
+                        <img class="tiktok" src="./img/sociales/Linkedin.png" alt="Linkedin"> Linkedin
+                    </a> -->
+                    <a href="https://www.instagram.com/airesacondicionadosnico?stkn=M2E3b3gycTF2ZGty" target="_blank"
+                        title="Ir a Instagram">
+                        <img class="instagram" src="./img/sociales/instagram.png" alt="GitHub"> Instagram
+                    </a>
+                    <a href="https://www.facebook.com" target="_blank" title="Ir a Facebook">
+                        <img class="facebook" src="./img/sociales/facebook.png" alt="Facebook"> Facebook
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=+541176039395&text=Hola%2C%20me%20contacto%20desde%20el%20sitio%20web%20Aires%20Nico...%20¿podrías%20contarme%20sobre%20los%20servicios?"
+                        target="_blank" title="Ir a Whatsapp">
+                        <img class="whatsapp" src="./img/sociales/whatsapp.png" alt="Whatsapp">Whatsapp
+                    </a>
+                </div>
+            </div>
+
+            <div class="box-footer">
+                <h3 class="title-box">Otros datos</h3>
+                <div class="otros-datos">
+                    <a
+                        href="mailto:ng9104944@gmail.com?subject=Consulta&body=Hola%2C%20quisiera%20más%20información%20sobre%20...">
+                        <i class="fa fa-envelope" aria-hidden="true"></i> Email
+                    </a>
+                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-11-7603-9395</p>
+                    <p class="direccion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Chile 621, B1663 José C. Paz, Buenos Aires</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="legales">
+            <a class="creditos" href="creditos.html">Créditos</a>
+            <a class="terminos" href="terminos.html">Térm. y condiciones</a>
+            <a href="privacidad.html">Política de Privacidad</a>
+        </div>
+
+        <!-- ******** linea ******** -->
+        <hr>
+
+        <!-- ******** Copyright ******** -->
+        <div class="copy">
+            <!-- <p class="copyright">&copy; <span id="copyright-year"></span> Administración Bourguet - Todos los derechos reservados - Espinola José Luis</p> -->
+            <p class="copyright">&copy; <span id="copyright-year"></span>
+                Aires Nico - Todos los derechos reservados -
+                <a href="https://portafoliojoseluis.netlify.app/" target="_blank">Espinola José Luis</a>
+            </p>
+
+            <script>
+                const currentYear = new Date().getFullYear();
+                document.getElementById('copyright-year').textContent = currentYear;
+            </script>
+        </div>
+    </footer>
+
+    <script src="/js/menu.js"></script>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymcus">
+    </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/js/scrollreveal.js"></script>
+</body>
+
+</html>

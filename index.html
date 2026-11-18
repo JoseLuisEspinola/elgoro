@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+      content="El Goro en Uruguay 4000, Escalada, Zárate, Zona Norte de Buenos Aires. Lugar de esparcimiento en Zárate, pileta, quincho, asador, cancha de futbol.">
+
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Lugar de esparcimiento en Escalada, Zárate, Zona Norte | El Goro">
+    <meta property="og:description"
+      content="El Goro en Uruguay 4000, Escalada, Zárate, Zona Norte de Buenos Aires. Lavado de vehículos, mecánica ligera y detalles de pintura.">
+    <meta property="og:image" content="https://lavadero-cj-neon.vercel.app/img/logo-lavaderocj.png">
+    <meta property="og:url" content="https://lavadero-cj-neon.vercel.app/">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lugar de esparcimiento en Escalada, Zárate, Zona Norte | El Goro">
+    <meta name="twitter:description"
+      content="El Goro en Uruguay 4000, Escalada, Zárate, Zona Norte de Buenos Aires. Lugar de esparcimiento, pileta, quincho, parrilla, cancha de futbol.">
+    <meta name="twitter:image" content="https://lavadero-cj-neon.vercel.app/img/logo-lavaderocj.png">
+
+    <link rel="canonical" href="https://lavadero-cj-neon.vercel.app/">
+
+    <link rel="shortcut icon" type="Image/png" href="./img/logo-elgoro.png">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>El Goro | Quincho El Goro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Schema Markup for LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "El Goro",
+        "image": "https://lavadero-cj-neon.vercel.app/img/logo-lavaderocj.png",
+        "description": "El Goro en Uruguay 4000, Escalada, Zárate, Zona Norte de Buenos Aires. Lugar de esparcimiento en Zárate, pileta, quincho, asador, cancha de futbol.",
+        "url": "https://lavadero-cj-neon.vercel.app/",
+        "telephone": "+543487360514",
+        "email": "xxxxxx@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Uruguay 4000",
+          "addressLocality": "Escalada, Zárate",
+          "addressRegion": "Buenos Aires",
+          "addressCountry": "AR"
+        },
+        "areaServed": ["Escalada", "Zárate", "Campana", "Zona Norte"]
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.2/anime.min.js"></script>
+</head>
+
+<body>
+    <!-- Barra de navegacion o NavBar -->
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-times"></i>
+        </label>
+
+        <div class="logo">
+            <a href="#" class="enlace">
+              <img src="/img/logo-elgoro.png" class="logo-img" alt="Logo El Goro">
+            </a>
+            <div class="names">
+              <span class="main-name">EL GORO</span>
+              <span class="main-namesito">¡Traé las ganas, nosotros ponemos el lugar!</span>
+            </div>
+        </div>
+
+        <ul>
+            <li><a href="#" class="link-animado">Inicio</a></li>
+            <li><a href="#section-goro" class="link-animado">El Goro</a></li>
+            <li><a href="#container-servicios" class="link-animado">Servicios</a></li>
+            <li><a href="#questions_id" class="link-animado">FAQ</a></li>
+            <li><a href="#" class="link-animado">Galería</a></li>
+            <li><a href="#ubicacion" class="link-animado">Ubicación</a></li>
+            <li><a href="#contactos" class="link-animado">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- JavaScript donde se captura la parte de arriba de la pagina: header-->
+    <script>
+        window.addEventListener("scroll", function () {
+          var header = document.querySelector("nav");
+          header.classList.toggle("abajo", window.scrollY > 0);
+        }, { passive: true }); // pasive lo agregue, solo si NO uso preventDefault()
+    </script>
+
+
+    <!-- JavaScript para animación de enlaces -->
+    <script>
+        // 1. Creamos el array de letras automáticamente
+        document.querySelectorAll('.link-animado').forEach(link => {
+            link.innerHTML = link.textContent.split('').map(letra => 
+              `<span>${letra}</span>`
+            ).join('');
+        });
+
+        // 2. Animación al hacer hover
+        document.querySelectorAll('.link-animado').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+              anime.timeline({ loop: false })
+                .add({
+                  targets: link.querySelectorAll('span'),
+                  translateY: -10, // salto hacia arriba
+                  duration: 400,
+                  easing: 'easeOutElastic(1, .6)',
+                  delay: anime.stagger(40) // LA OLA: 40ms entre cada letra
+                })
+                .add({
+                  targets: link.querySelectorAll('span'),
+                  translateY: 0, // vuelta al origen
+                  duration: 600,
+                  easing: 'easeOutElastic(1, .6)',
+                  delay: anime.stagger(40),
+                  // se queda 1 segundo arriba antes de volver
+                }, '+=800'); // +=800 = espera 0.8s
+            });
+        });
+    </script>
+
+
+    <!-- Zona central de la primer pagina -->
+    <section class="zona1">
+        <div class="container-zona1">
+            <video class="video-fondo video-fondo--activo" src="./video/video1.mp4" autoplay muted playsinline preload="auto" aria-hidden="true"></video>
+            <video class="video-fondo" src="./video/video2.mp4" muted playsinline preload="metadata" aria-hidden="true"></video>
+            <video class="video-fondo" src="./video/video3.mp4" muted playsinline preload="metadata" aria-hidden="true"></video>
+
+            <div class="contenido">
+                <div class="pre-title">
+                    <span>PILETA • ASADOS • EVENTOS</span>
+                </div>
+                <div class="h1-zona1">
+                    <h1 class="title-main">Tu día perfecto comienza aquí</h1>
+                </div>
+                <div class="p-zona1">
+                    <p class="parrafo-main">
+                        Pileta, quincho, parrillas y espacios para compartir momentos
+                        inolvidables con familia y amigos.
+                    </p>
+                </div>
+
+                <div class="botones-zona1">
+                    <a href="#contactos" class="btn-zona1 a-formulario">Consultar disponibilidad</a>
+                    <a href="#" class="btn-zona1 a-galeria">Ver galería</a>
+                </div>
+            </div>
+        </div>
+
+	</section>
+
+
+
+    <!-- ************Card responsive********************* -->
+    <section id="container-servicios">
+        <h2 class="titulo-servicios">Servicios</h2>
+        <div class="card-servicios">
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto01.jpg" alt="Piscina y solarium">
+                </div>
+                <div class="mini-title">
+                    <h5>- PILETA -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Piscina y solarium</h3>
+                </div>
+                <div class="card-description">
+                    <p>Disfrutá de la pileta y el solárium, ideales para relajarte al aire libre.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupuesto</a>
+                </div>
+            </article>
+
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto02.jpg" alt="parrilla y cocina">
+                </div>
+                <div class="mini-title">
+                    <h5>- PARRILLA -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Parrilla y cocina</h3>
+                </div>
+                <div class="card-description">
+                    <p>Disfrutá de la parrilla y la cocina para compartir una buena comida.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupuesto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto03.jpg" alt="Mecánico revisando el motor de un vehículo">
+                </div>
+                <div class="mini-title">
+                    <h5>- CANCHA -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Futbol y Volley</h3>
+                </div>
+                <div class="card-description">
+                    <p>Una cancha en buen estado para disfrutar del fútbol y el vóley.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupuesto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto04.jpg" alt="Pulido de la pintura de un automóvil">
+                </div>
+                <div class="mini-title">
+                    <h5>- BAÑOS -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Baños</h3>
+                </div>
+                <div class="card-description">
+                    <p>Baños limpios y bien higienizados para que disfrutes tu visita con comodidad.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupusto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto05.jpg" alt="Pulido de la pintura de un automóvil">
+                </div>
+                <div class="mini-title">
+                    <h5>- MESAS Y SILLAS -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Mesas y Sillas</h3>
+                </div>
+                <div class="card-description">
+                    <p>Mesas y sillas disponibles para que compartas cómodamente con tus invitados.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupusto</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-img">
+                    <img src="/img/fotos/foto06.jpg" alt="Pulido de la pintura de un automóvil">
+                </div>
+                <div class="mini-title">
+                    <h5>- ESTACIONAMIENTO -</h5>
+                </div>
+                <div class="card-title">
+                    <h3>Estacionamiento</h3>
+                </div>
+                <div class="card-description">
+                    <p>Amplio espacio para estacionar varios vehículos.</p>
+                </div>
+                <div class="card-btn">
+                    <a href="#contactos">Pedir presupusto</a>
+                </div>
+            </article>
+
+        </div>
+        <a class="btn-servicios" href="index.html#contactos">¡Contactanos!</a>
+    </section>
+
+
+
+    <!-- Precios -->
+    <section id="section-precios">
+        <h2 class="title-precios">Precios</h2>
+        <p class="calendar-price-intro">El precio depende del día de la semana:</p>
+        <ul class="calendar-price-list">
+            <li class="calendar-price-item">
+                <i class="fa-solid fa-calendar-days calendar-price-icon" aria-hidden="true"></i>
+                <span class="calendar-price-name">Dia de semana</span>
+                <strong class="calendar-price-amount" data-price-vehicle="auto-app">$300.000</strong>
+            </li>
+            <li class="calendar-price-item">
+                <i class="fa-solid fa-calendar-days calendar-price-icon" aria-hidden="true"></i>
+                <span class="calendar-price-name">Sábado y Domingo</span>
+                <strong class="calendar-price-amount" data-price-vehicle="sedan">$400.000</strong>
+            </li>
+        </ul>
+        
+        
+        <div class="flecha-btn">
+            <p class="flecha-izq" aria-hidden="true">&gt;&gt;</p>
+            <a class="btn-precios" href="#contactos">¡Reserva tu turno!</a>
+            <p class="flecha-der" aria-hidden="true">&lt;&lt;</p>
+        </div>
+    </section>
+
+
+
+
+    <!-- CONOCIENDO EL GORO -->
+    <section class="about-goro" id="section-goro">
+        <div class="about-goro_image">
+            <img src="./img/fotos/foto07.jpg" alt="El Goro">
+        </div>
+        <div class="about-goro_content">
+            <span class="about-goro_eyebrow">
+                CONOCIENDO EL GORO
+            </span>
+            <h2>
+                Un lugar para reunirse,
+                compartir y disfrutar.
+            </h2>
+            <p>
+                El Goro nace como un homenaje a
+                Gorosito, abuelo de la familia y conocido
+                cariñosamente por todos como
+                <strong>"Goro"</strong>.
+            </p>
+            <p>
+                Hoy su nombre sigue presente en este
+                espacio pensado para disfrutar al aire libre,
+                compartir un asado, refrescarse en la pileta,
+                jugar un partido o simplemente pasar un buen
+                momento rodeado de naturaleza.
+            </p>
+            <p>
+                Más que un lugar, <strong>El Goro</strong> es un punto de
+                encuentro donde cada visita se convierte
+                en un nuevo recuerdo.
+            </p>
+            <p>
+                <a class="btn-visitanos" href="#contactos">Visitanos</a>
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Section RENUEVA -->
+    <section class="section-renueva">
+        <h2 class="title-working">¡Seguimos creciendo!</h2>
+        <div class="container-renueva">
+            <img src="./img/fotos/foto08.jpg" class="galeria-img1" alt="Lavado exterior de un automóvil con agua a presión">
+            <img src="./img/fotos/foto09.jpg" class="galeria-img2" alt="Pintura automotriz aplicada con pistola">
+            <img src="./img/fotos/foto10.jpg" class="galeria-img3" alt="Mecánico trabajando en el motor de un automóvil">
+            <img src="./img/fotos/foto11.jpg" class="galeria-img4" alt="Limpieza exterior de un automóvil con esponja">
+        </div>
+        <a href="#" class="btn-renueva">Galería</a>
+    </section>
+
+
+
+    <!-- Preguntas frecuentes -->
+    <section class="questions container" id="questions_id">
+        <h2 class="titulo-preguntas">Preguntas frecuentes</h2>
+        <p class="questions_paragraph">Estas son algunas de las consultas más comunes.</p>
+
+        <section class="questions_container">
+
+            <article class="questions_padding">
+                <div class="questions_answer">
+                    <h3 class="questions_title">¿Se puede alquilar para quedarse a dormir?
+                      <span class="questions_arrow">
+                        <img src="./img/icons/arrow.svg" class="questions_img" alt="">
+                      </span>
+                    </h3>
+                    <p class="questions_show">No, el espacio se alquila únicamente para pasar el día. El horario habitual es de 10:00 a 20:00; se puede extender hasta las 00:00 abonando horas extra.
+                    </p>
+                </div>
+            </article>
+
+            <article class="questions_padding">
+                <div class="questions_answer">
+                    <h3 class="questions_title">¿Cuántas personas pueden asistir? ¿Se admiten animales?
+                        <span class="questions_arrow">
+                            <img src="./img/icons/arrow.svg" class="questions_img" alt="">
+                        </span>
+                    </h3>
+                    <p class="questions_show">La capacidad máxima es de 40 personas y sí, se admiten animales.
+                    </p>
+                </div>
+            </article>
+
+            <article class="questions_padding">
+                <div class="questions_answer">
+                    <h3 class="questions_title">¿Cómo se reserva y cuándo se paga?
+                        <span class="questions_arrow">
+                            <img src="./img/icons/arrow.svg" class="questions_img" alt="">
+                        </span>
+                    </h3>
+                    <p class="questions_show">La fecha se reserva abonando un depósito, aparte del alquiler. El alquiler puede pagarse hasta el día anterior. El depósito se devuelve al retirarse si las instalaciones quedan en las mismas condiciones.
+                    </p>
+                </div>
+            </article>
+
+            <article class="questions_padding">
+                <div class="questions_answer">
+                    <h3 class="questions_title">¿Qué ocurre si llueve el día de la reserva?
+                        <span class="questions_arrow">
+                            <img src="./img/icons/arrow.svg" class="questions_img" alt="">
+                        </span>
+                    </h3>
+                    <p class="questions_show">Se coordina una nueva fecha que puedan utilizar o se devuelve el depósito.
+                    </p>
+                </div>
+            </article>
+
+          <article class="questions_padding">
+              <div class="questions_answer">
+                  <h3 class="questions_title">¿Hay actividades o elementos que no están permitidos?
+                      <span class="questions_arrow">
+                          <img src="./img/icons/arrow.svg" class="questions_img" alt="">
+                      </span>
+                  </h3>
+                  <p class="questions_show">No se permite el uso de pomos de espuma ni de juegos de agua.
+                  </p>
+              </div>
+          </article>
+
+        </section>
+
+        <section class="questions_offer">
+            <div class="btn-flecha">
+                <p class="f-izq" alt="flecha-izq">>></p>
+                <a href="#contactos" class="btn-aprende">¡Escribenos!</a>
+                <p class="f-der" alt="flecha-der">
+                << </p>
+            </div>
+        </section>
+
+    </section>
+
+
+
+
+    <!-- *********** MARQUESINA *********** -->
+    <section class="marquesina">
+        <div class="marquesina-content">
+            <div class="marquesina-group">
+                <span>🏡 Alquilamos de 10:00 a 20:00 horas, para 40 personas 👥</span>
+                <span>💬 Consultanos</span>
+            </div>
+            <div class="marquesina-group" aria-hidden="true">
+                <span>🏡 Alquilamos de 10:00 a 20:00 horas, para 40 personas 👥</span>
+                <span>💬 Consultanos</span>
+            </div>
+            <div class="marquesina-group" aria-hidden="true">
+                <span>🏡 Alquilamos de 10:00 a 20:00 horas, para 40 personas 👥</span>
+                <span>💬 Consultanos</span>
+            </div>
+            <div class="marquesina-group" aria-hidden="true">
+                <span>🏡 Alquilamos de 10:00 a 20:00 horas, para 40 personas 👥</span>
+                <span>💬 Consultanos</span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ********** FORMULARIO ********** -->
+    <section id="ubicacion">
+        <h2 class="titulo-ubicacion">Ubicación</h2>
+
+        <div class="container-ubicacion">
+            <div class="ubicacion-mapa">
+                <address>
+                    <p><span>El Goro</span> - Bandera Argentina 200, Escalada ruta 193, km 10.5, Zárate, Zona Norte de Buenos Aires</p>
+                    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=-34.158003162038305%2C-59.120529613577744"
+                        target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+                </address>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1034.9307304731115!2d-59.116610141378814!3d-34.160122499571166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb9fe8a11808f3%3A0xf07c031d63847b83!2sQuinta%20EL%20GORO!5e1!3m2!1ses-419!2sar!4v1795027283758!5m2!1ses-419!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="strict-origin-when-cross-origin">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ********** CONTACTOS ********** -->
+    <section id="contactos" class="section-contactos">
+        <div class="contactos-contenedor">
+            <div class="contactos-header">
+                <p class="contactos-pretitle">Hablá con nosotros</p>
+                <h2>Contactos</h2>
+                <p>Elegí tu canal favorito y coordiná tu visita o próxima reserva.</p>
+            </div>
+
+            <div class="contactos-grid">
+                <a class="contacto-card contacto-whatsapp"
+                    href="https://api.whatsapp.com/send?phone=+543487360514&amp;text=Hola%2C%20me%20contacto%20desde%20el%20sitio%20web%20El%20Goro...%20%C2%BFpodes%20contarme%20sobre%20los%20servicios%3F"
+                    target="_blank" rel="noopener noreferrer"
+                    aria-label="Consultar por WhatsApp">
+                    <span class="contacto-icono"><i class="fab fa-whatsapp"></i></span>
+                    <span class="contacto-info">
+                        <strong>WhatsApp</strong>
+                        <small>+54-3487-360514</small>
+                    </span>
+                    <i class="fas fa-arrow-up-right-from-square contacto-flecha" aria-hidden="true"></i>
+                </a>
+
+                <a class="contacto-card contacto-instagram"
+                    href="https://www.instagram.com/quinta.elgoro/" target="_blank"
+                    rel="noopener noreferrer" aria-label="Visitar Instagram de El Goro">
+                    <span class="contacto-icono"><i class="fab fa-instagram"></i></span>
+                    <span class="contacto-info">
+                        <strong>Instagram</strong>
+                        <small>@quinta.elgoro</small>
+                    </span>
+                    <i class="fas fa-arrow-up-right-from-square contacto-flecha" aria-hidden="true"></i>
+                </a>
+
+                <a class="contacto-card contacto-facebook"
+                    href="https://www.facebook.com/marisol.goro.elgoro?locale=es_LA"
+                    target="_blank" rel="noopener noreferrer" aria-label="Visitar Facebook de El Goro">
+                    <span class="contacto-icono"><i class="fab fa-facebook-f"></i></span>
+                    <span class="contacto-info">
+                        <strong>Facebook</strong>
+                        <small>El Goro</small>
+                    </span>
+                    <i class="fas fa-arrow-up-right-from-square contacto-flecha" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ********* Seccion de footer ******** -->
+    <footer class="footer-container">
+        <div class="container-box footer-grid">
+            <div class="box-footer box-footer-datos">
+                <h3 class="title-box">Otros datos</h3>
+                <div class="otros-datos">
+                    <p class="horarios"><i class="fa-solid fa-clock" aria-hidden="true"></i> Todos los días, de 10:00 hs a 20:00 hs</p>
+                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-3487-360514</p>
+                    <p class="direccion"><i class="fa-solid fa-location-dot"></i> Bandera Argentina 200, ruta 193 km 10.5, Escalada, Zárate, Buenos Aires</p>
+                </div>
+            </div>
+
+            <div class="box-footer box-footer-qr">
+                <h3 class="title-box">Guardá nuestros datos</h3>
+                <div class="qr-footer-contenido">
+                    <div id="qr-contacto"></div>
+                    <p id="qr-contacto-mensaje" class="qr-mensaje" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-terminos">
+            <p>
+                <a class="creditos" href="#">Créditos</a> - 
+                <a class="terminos" href="terminos.html">Térm. y condiciones</a> -
+                <a class="terminos" href="privacidad.html">Política de Privacidad</a>
+            </p>
+        </div>
+
+        <!-- ******** linea ******** -->
+        <hr>
+
+        <!-- ******** Copyright ******** -->
+        <div class="copy">
+            <!-- <p class="copyright">&copy; <span id="copyright-year"></span> Administración Bourguet - Todos los derechos reservados - Espinola José Luis</p> -->
+            <p class="copyright">&copy; <span id="copyright-year"></span>
+                El Goro - Todos los derechos reservados
+            </p>
+
+            <script>
+                const currentYear = new Date().getFullYear();
+                document.getElementById('copyright-year').textContent = currentYear;
+            </script>
+        </div>
+    </footer>
+
+    <script src="./js/menu.js"></script>
+    <script src="./js/video-fondo.js"></script>
+    <script src="./js/preguntas.js"></script>
+    <!-- Incluir la biblioteca de ScrollReveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="./js/scrollreveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="./js/qr.js"></script>
+
+</body>
+</html>
