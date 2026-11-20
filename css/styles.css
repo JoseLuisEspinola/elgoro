@@ -1329,7 +1329,7 @@ p.f-der {
 /* ****** CERCA DE VOS - EL GORO ****** */
 /****************************************/
 .section-cercania {
-    background: var(--bg);
+    background: var(--bg-light);
     padding: 60px 20px;
     text-align: center;
 }
