@@ -1136,7 +1136,7 @@ p.f-der {
 
 
 /* *********************************** */
-/* ********** Formulario ************* */
+/* *********** Ubicacion ************* */
 /* *********************************** */
 #ubicacion {
     padding-top: 100px;
@@ -1208,7 +1208,7 @@ p.f-der {
 /* ****** Contactos ****** */
 /***************************/
 .section-contactos {
-    padding: 90px 20px;
+    padding: 110px 20px;
     background: var(--bg);
 }
 
