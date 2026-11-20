@@ -69,7 +69,9 @@
             <li><a href="index.html" class="link-animado">Inicio</a></li>
             <li><a href="index.html#section-goro" class="link-animado">El Goro</a></li>
             <li><a href="index.html#container-servicios" class="link-animado">Servicios</a></li>
+            <li><a href="index.html#questions_id" class="link-animado">FAQ</a></li>
             <li><a href="galeria.html" class="link-animado">Galería</a></li>
+            <li><a href="index.html#ubicacion" class="link-animado">Ubicación</a></li>
             <li><a href="index.html#contactos" class="link-animado">Contacto</a></li>
         </ul>
     </nav>
@@ -195,47 +197,34 @@
         </div>
     </main>
 
+
+    <!-- ********* Seccion de footer ******** -->
     <footer class="footer-container">
-        <div class="container-box">
-
-            <div class="box-footer">
-                <h3 class="title-box">Horarios</h3>
-                <p class="dias">Todos los días:</p>
-                <p class="horas">10:00 hs a 20:00 hs</p>
-            </div>
-
-            <div class="box-footer">
-                <h3 class="title-box">Sociales</h3>
-                <div class="sociales">
-                    <!-- <a href="https://www.linkedin.com/in/jose-luis-espinola-a036b7125/" target="_blank" title="Ir a TikTok">
-                        <img class="tiktok" src="./img/sociales/Linkedin.png" alt="Linkedin"> Linkedin
-                    </a> -->
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" title="Ir a Instagram">
-                        <img class="instagram" src="./img/sociales/instagram.png" alt="Instagram"> Instagram
-                    </a>
-                    <a href="https://www.facebook.com/marisol.goro.elgoro?locale=es_LA" target="_blank" rel="noopener noreferrer" title="Ir a Facebook">
-                        <img class="facebook" src="./img/sociales/facebook.png" alt="Facebook"> Facebook
-                    </a>
-                    <a href="https://api.whatsapp.com/send?phone=+543487360514" target="_blank" rel="noopener noreferrer" title="Ir a Whatsapp">
-                        <img class="whatsapp" src="./img/sociales/whatsapp.png" alt="Whatsapp">Whatsapp
-                    </a>
+        <div class="container-box footer-grid">
+            <div class="box-footer box-footer-datos">
+                <h3 class="title-box">Otros datos</h3>
+                <div class="otros-datos">
+                    <p class="horarios"><i class="fa-solid fa-clock" aria-hidden="true"></i> Todos los días, de 10:00 hs a 20:00 hs</p>
+                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-3487-360514</p>
+                    <p class="direccion"><i class="fa-solid fa-location-dot"></i> Bandera Argentina 200, ruta 193 km 10.5, Escalada, Zárate, Buenos Aires</p>
                 </div>
             </div>
 
-            <div class="box-footer">
-                <h3 class="title-box">Otros datos</h3>
-                <div class="otros-datos">
-                    <p>Consultas: <a href="index.html#contactos">WhatsApp, Instagram o Messenger</a></p>
-                    <p class="telefono"><i class="fa fa-phone" aria-hidden="true"></i> +54-3487-360514</p>
-                    <p class="direccion"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Bandera Argentina 200, Ruta 193 km 10.5, Escalada, Zárate, Buenos Aires</p>
+            <div class="box-footer box-footer-qr">
+                <h3 class="title-box">Guardá nuestros datos</h3>
+                <div class="qr-footer-contenido">
+                    <div id="qr-contacto"></div>
+                    <p id="qr-contacto-mensaje" class="qr-mensaje" aria-live="polite"></p>
                 </div>
             </div>
         </div>
 
-        <div class="legales">
-            <a class="creditos" href="creditos.html">Créditos</a>
-            <a class="terminos" href="terminos.html">Térm. y condiciones</a>
-            <a href="privacidad.html">Política de Privacidad</a>
+        <div class="container-terminos">
+            <p>
+                <a class="creditos" href="creditos.html">Créditos</a> - 
+                <a class="terminos" href="terminos.html">Térm. y condiciones</a> -
+                <a class="terminos" href="privacidad.html">Política de Privacidad</a>
+            </p>
         </div>
 
         <!-- ******** linea ******** -->
@@ -256,7 +245,9 @@
     </footer>
 
     <script src="./js/menu.js"></script>
-    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymcus"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+    <script src="./js/qr.js"></script>
+    <script src="https://kit.fontawesome.com/81581fb069.js" crossorigin="anonymocus"></script>
     <!-- Incluir la biblioteca de ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./js/scrollreveal.js"></script>
