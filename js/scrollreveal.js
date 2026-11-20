@@ -95,14 +95,34 @@ sr.reveal('.questions_copy', {
     viewFactor: 0.5
 });
 
-sr.reveal('.titulo-ubicacion', {
+sr.reveal('.titulo-ubicacion h2', {
     duration: 2000,
     origin: 'bottom',
     distance: '100px',
     delay: 100,
     reset: true,
-    viwFactor: 0.5
+    viewFactor: 0.5
 });
+
+sr.reveal('.contactos-header h2', {
+    duration: 2000,
+    origin: 'top',
+    distance: '100px',
+    delay: 100,
+    reset: true,
+    viewFactor: 0.5
+});
+
+sr.reveal('.contactos-pretitle', {
+    duration: 2000,
+    origin: 'bottom',
+    distance: '100px',
+    delay: 100,
+    reset: true,
+    viewFactor: 0.5
+});
+
+
 
 
 
@@ -148,7 +168,7 @@ sr.reveal('.title-gallery', {
     distance: '100px',
     delay: 100,
     reset: true,
-    viwFactor: 0.5
+    viewFactor: 0.5
 });
 
 
