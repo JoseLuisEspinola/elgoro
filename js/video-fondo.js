@@ -2,6 +2,7 @@ const videosFondo = Array.from(document.querySelectorAll('.video-fondo'));
 
 if (videosFondo.length) {
     let indiceActivo = 0;
+    const esMovil = window.matchMedia('(max-width: 768px)').matches;
 
     function reproducir(video) {
         const resultado = video.play();
@@ -31,6 +32,16 @@ if (videosFondo.length) {
             reproducir(videoSiguiente);
         });
     });
+
+    if (esMovil) {
+        videosFondo.forEach(function (video) {
+            video.preload = 'none';
+
+            if (video.dataset.srcMobile) {
+                video.src = video.dataset.srcMobile;
+            }
+        });
+    }
 
     reproducir(videosFondo[indiceActivo]);
 }
