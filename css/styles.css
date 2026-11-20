@@ -871,6 +871,53 @@ p.flecha-der {
 }
 
 
+
+
+/* ***************** */
+/* *** Marquesina*** */
+.marquesina {
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--bg);
+    padding: 10px 0;
+}
+
+.marquesina-content {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+.marquesina-group {
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.marquesina-content span {
+    flex: 0 0 auto;
+    margin: 0 80px;
+    /* espacio entre frases */
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+    color: var(--text);
+    font-weight: 600;
+}
+
+
+
+
+
 /* ************************************* */
 /* ********* Preguntas Frecuentes ****** */
 .questions {
@@ -989,8 +1036,8 @@ p.flecha-der {
 }
 
 .questions_show a {
-    color: var(--color30);
-    font-weight: 600;
+    color: var(--green-dark);
+    font-weight: 800;
 }
 
 .questions_img {
@@ -1091,48 +1138,6 @@ p.f-der {
 }
 
 
-/* ***************** */
-/* *** Marquesina*** */
-.marquesina {
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    width: 100%;
-    background-color: var(--green-dark);
-    padding: 10px 0;
-}
-
-.marquesina-content {
-    display: flex;
-    width: max-content;
-    animation: scroll 20s linear infinite;
-}
-
-.marquesina-group {
-    display: flex;
-    flex: 0 0 auto;
-}
-
-.marquesina-content span {
-    flex: 0 0 auto;
-    margin: 0 80px;
-    /* espacio entre frases */
-    font-size: clamp(1.2rem, 3vw, 1.75rem);
-    color: var(--white);
-    font-weight: 600;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-25%);
-    }
-}
-
-
 
 
 /* *********************************** */
@@ -1145,12 +1150,13 @@ p.f-der {
     /* background: linear-gradient(rgba(42, 42, 42, 0.6), rgba(42, 42, 42, 0.6)),
           url(/img/fondo01.png) no-repeat; */
     background: url(/img/fondo-form.png) no-repeat;
-    background-size: 100vw 100vh;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
     margin: auto;
 }
 
-.titulo-ubicacion {
+#ubicacion > .titulo-ubicacion {
     margin: 0 auto 30px;
     text-align: center;
     font-size: clamp(2.4rem, 3vw, 3rem);
@@ -1163,12 +1169,12 @@ p.f-der {
     justify-content: space-evenly;
     margin: 0 auto;
     /* border: 1px solid #02fcfc; */
-    max-width: 100%;
+    width: 100%;
     height: 500px;
 }
 
 .ubicacion-mapa {
-    width: 40%;
+    width: 50%;
 }
 
 .ubicacion-mapa address {
@@ -1601,7 +1607,7 @@ footer hr {
         left: 0;
         margin: 0;
         text-align: center;
-        transform: translateY(calc(-100% - 100px));
+        transform: translateX(-100%);
         transition: transform 0.5s ease;
         overflow-y: auto;
         display: block;
@@ -1623,7 +1629,7 @@ footer hr {
     }
 
     #check:checked ~ ul {
-        transform: translateY(0);
+        transform: translateX(0);
     }
 }
 
@@ -1649,7 +1655,7 @@ footer hr {
 /* ***** Media Query con 952px ***** */
 @media (max-width: 952px) {
     .ubicacion-mapa {
-        width: 50%;
+        width: 70%;
     }
 }
 
@@ -1674,7 +1680,7 @@ footer hr {
     }
 
     .ubicacion-mapa {
-        width: 60%;
+        width: 80%;
     }
 }
 
@@ -1740,7 +1746,11 @@ footer hr {
         padding: 6px 20px;
     }
 
-    .titulo-ubicacion {
+    .ubicacion-mapa {
+        width: 80%;
+    }
+
+    #ubicacion > .titulo-ubicacion {
         width: 56%;
     }
 }

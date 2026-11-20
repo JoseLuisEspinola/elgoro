@@ -524,7 +524,7 @@ div.contanier-nombres {
         text-align: center;
         
         /* nuevo efecto */
-        transform: translateY(calc(-100% - 96px));
+        transform: translateX(-100%);
         transition: transform 0.5s ease;
         /* fin nuevo */
 
@@ -549,7 +549,7 @@ div.contanier-nombres {
 
     #check:checked ~ ul {
         /* nuevo efecto */
-        transform: translateY(0);
+        transform: translateX(0);
     }
 
     nav .nav-redes {
